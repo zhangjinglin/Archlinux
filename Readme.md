@@ -81,6 +81,59 @@
     pacman-key --populate archlinux
     [end if]
 
-    sudo pacman -S xorg i3 lightdm lightdm-gtk-greeter xfce4-terminal open-vm-tools gtkmm3 xf86-input-vmmouse xf86-video-vmware fcitx-im fcitx-configtool fcitx-rime picom rofi pcmanfm feh git
+    sudo pacman -S xorg i3 lightdm lightdm-gtk-greeter xfce4-terminal open-vm-tools gtkmm3 xf86-input-vmmouse xf86-video-vmware git
+    
+    sudo systemctl enable vmtoolsd
+    sudo systemctl enable vmware-vmblock-fuse
+    sudo systemctl enable lightdm0214
 
+    reboot
+    ```
+
+8. config vmware in i3
+    ```
+    vim .config/i3/config
+        exec --no-startup-id vmware-user-suid-wrapper
+
+    git clone https://github.com/zhangjinglin/ArchLinux --depth 1
+    cp ArchLinux/Xresources .Xresources
+
+    reboot
+    ```
+    
+
+8. config new system    
+    ```
+    sudo pacman -S fcitx-im fcitx-configtool fcitx-rime picom rofi pcmanfm feh fish ttf-cascadia-code yay noto-fonts-cjk polybar
+
+    yay chrome
+
+    curl -L https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold.ttf -o "MesloLGS NF Bold.ttf"
+    curl -L https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Italic.ttf -o "MesloLGS NF Italic.ttf"
+    curl -L https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold%20Italic.ttf -o "MesloLGS NF Bold Italic.ttf"
+    curl -L https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf -o "MesloLGS NF Regular.ttf"
+
+    sudo mv *.ttf /usr/share/fonts/TTF/ 
+    sudo fc-cache
+    // change the terminal font
+
+    cp ArchLinux/xinitrc .xinitrc
+
+    chsh -s /usr/bin/fish
+    curl -L http://get.oh-my.fish | fish
+    omf install agnoster
+
+    sudo groupadd -r autologin
+    sudo gpasswd -a myname autologin
+    vim /etc/lighdm/lightdm.conf
+        autologin-guest=false
+        autologin-user=zhangjinglin
+        autologin-user-timeout=0
+        autologin-session=i3
+
+    yay pa-applet
+    
+
+
+    
 
