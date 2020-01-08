@@ -54,7 +54,6 @@ module-margin-right = 0
 
 font-0 = "MesloLGS NF:size=18;0"
 font-1 = "MesloLGS NF:pixelsize=30;0"
-font-2 = "Noto Color Emoji:pixelsize=18"
 
 modules-left = i3
 modules-center = 
@@ -166,6 +165,24 @@ format-underline = #0a6cf5
 format-prefix = ""
 format-prefix-font = 2
 label = %date% %time%
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT0
+adapter = AC0
+poll-interval = 5
+time-format = %H:%M
+format-charging-prefix = 
+
+format-charging = <label-charging>
+label-charging = " %percentage%%(%time%)"
+format-charging-underline = #00ff00
+
+format-discharging-prefix = 
+format-discharging = <label-discharging>
+label-discharging = " %percentage%%(%time%)"
+format-discharging-underline = #ff00000
 
 [module/alsa]
 type = internal/alsa
