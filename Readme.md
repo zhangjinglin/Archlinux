@@ -18,6 +18,7 @@
 5. use `gdisk /dev/sda` to partition. create a `EFI 500M ef00` part, and rest to `ext4`. use `o` to create a new gpt disk, and `n` to create part, `w` write to the disk.
 > also can use `cgdisk`
 
+> 002-
 6. other command
     ```bash
     mkfs.vfat /dev/sda1
@@ -104,7 +105,7 @@
 
 8. config new system    
     ```
-    sudo pacman -S fcitx-im fcitx-configtool fcitx-rime picom rofi pcmanfm feh fish ttf-cascadia-code yay noto-fonts-cjk polybar
+    sudo pacman -S fcitx-im fcitx-configtool fcitx-rime picom rofi pcmanfm feh fish ttf-cascadia-code yay noto-fonts-cjk polybar alsa-utils lxappearance arc-gtk-theme
 
     yay chrome
 
@@ -131,9 +132,16 @@
         autologin-user-timeout=0
         autologin-session=i3
 
-    yay pa-applet
-    
+    alsamixer
 
+    mkdir ~/Wallpaper
+    cp ArchLinux/backgound.jpg Wallpaper
+    mkdir .config/i3 .config/picom
+    cp i3-config ./config/i3/config
+    cp picom.conf ./config/picom
+    cp -r polybar ./config
+
+    
 
     
 
