@@ -1,0 +1,52 @@
+set nocompatible
+syntax enable
+set showmode
+set mouse=a
+set paste
+set encoding=utf-8
+set t_Co=256
+
+set tabstop=4
+set softtabstop=4
+set expandtab
+set shiftwidth=4
+
+set number
+set relativenumber
+set showcmd
+set cursorline
+filetype indent on
+set wildmenu
+set wildmode=longest:list,full
+
+set textwidth=80
+set wrap
+set linebreak
+set scrolloff=5
+set laststatus=2
+set ruler
+set showmatch
+
+set incsearch
+set hlsearch
+
+set undofile
+set autochdir
+set history=1000
+set autoread
+set listchars=tab:»■,trail:■
+set list
+
+nnoremap j gj
+nnoremap k gk
+
+let mapleader=";"
+
+inoremap jj <esc>
+nnoremap <leader>h ^
+nnoremap <leader>l $
+nnoremap <leader>s :w<cr>
+inoremap <leader>s <C-c>:w<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>qq :q!<cr>
+
