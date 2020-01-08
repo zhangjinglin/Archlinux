@@ -2,7 +2,6 @@ set nocompatible
 syntax enable
 set showmode
 set mouse=a
-set paste
 set encoding=utf-8
 set t_Co=256
 
