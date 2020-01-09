@@ -1,3 +1,4 @@
+set SSH_AUTH_SOCK
 neofetch
 
 function v

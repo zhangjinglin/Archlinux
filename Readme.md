@@ -106,7 +106,7 @@
 
 8. config new system    
     ```
-    sudo pacman -S fcitx-im fcitx-configtool fcitx-rime picom rofi pcmanfm feh fish ttf-cascadia-code yay noto-fonts-cjk polybar alsa-utils lxappearance arc-gtk-theme neofetch
+    sudo pacman -S fcitx-im fcitx-configtool fcitx-rime picom rofi pcmanfm feh fish ttf-cascadia-code yay noto-fonts-cjk polybar alsa-utils lxappearance arc-gtk-theme neofetch gvfs-smb tumbler gnome-keyring libsecret
 
     yay chrome
 

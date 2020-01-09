@@ -19,6 +19,7 @@ font pango:monospace 12
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
+exec --no-startup-id gnome-keyring-daemon --start
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id vmware-user-suid-wrapper
 exec --no-startup-id picom
