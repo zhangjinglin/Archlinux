@@ -26,7 +26,7 @@
     mount /dev/sda2 /mnt
     mkdir -p /mnt/boot/efi
     mount /dev/sda1 /mnt/boot/efi
-    pacstrap /mnt base base-devel linux linux-firmware networkmanager vim refind-efi intel-ucode
+    pacstrap /mnt base base-devel linux linux-firmware networkmanager vim refind-efi intel-ucode git
     genfstab -U /mnt >> /mnt/etc/fstab
     arch-chroot /mnt
     vim /etc/locale.gen (en_US zh_CN)
@@ -50,6 +50,7 @@
     cp /boot/efi/EFI/refind/refind_x64.efi /boot/efi/EFI/BOOT/bootx64.efi
     vim /boot/efi/EFI/refind/redind.conf
         uncomment scan_all_linux_kernels false
+        scanfor manual
         edit menuentry "Arch Linux" remove disable
         "Arch Linux" {
             icon ...
@@ -86,7 +87,7 @@
     
     sudo systemctl enable vmtoolsd
     sudo systemctl enable vmware-vmblock-fuse
-    sudo systemctl enable lightdm0214
+    sudo systemctl enable lightdm
 
     reboot
     ```
@@ -105,7 +106,7 @@
 
 8. config new system    
     ```
-    sudo pacman -S fcitx-im fcitx-configtool fcitx-rime picom rofi pcmanfm feh fish ttf-cascadia-code yay noto-fonts-cjk polybar alsa-utils lxappearance arc-gtk-theme
+    sudo pacman -S fcitx-im fcitx-configtool fcitx-rime picom rofi pcmanfm feh fish ttf-cascadia-code yay noto-fonts-cjk polybar alsa-utils lxappearance arc-gtk-theme neofetch
 
     yay chrome
 
@@ -116,16 +117,16 @@
 
     sudo mv *.ttf /usr/share/fonts/TTF/ 
     sudo fc-cache
-    // change the terminal font
+    cp -r ArchLinux/config/xfce4/ .config/
 
-    cp ArchLinux/xinitrc .xinitrc
+    cp ArchLinux/config/xinitrc .xinitrc
 
     chsh -s /usr/bin/fish
     curl -L http://get.oh-my.fish | fish
     omf install agnoster
 
     sudo groupadd -r autologin
-    sudo gpasswd -a myname autologin
+    sudo gpasswd -a zhangjinglin autologin
     vim /etc/lighdm/lightdm.conf
         autologin-guest=false
         autologin-user=zhangjinglin
@@ -136,11 +137,18 @@
 
     mkdir ~/Wallpaper
     cp ArchLinux/backgound.jpg Wallpaper
-    mkdir .config/i3 .config/picom
-    cp i3-config ./config/i3/config
-    cp picom.conf ./config/picom
-    cp -r polybar ./config
+    mkdir .config/picom
+    cp ArchLinux/config/i3/config .config/i3/
+    cp ArchLinux/config/picom/picom.conf .config/picom/
+    cp -r ArchLinux/config/polybar/ .config/
+    cp -r ArchLinux/config/fish .config/
+    cp ArchLinux/config/vimrc .vimrc
+    sudo cp ArchLinux/config/vimrc /root/.vimrc
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    open vim :PlugInstall
+    sudo cp -r .vim /root/
 
+    reboot
     
 
     
