@@ -148,8 +148,8 @@
     open vim :PlugInstall
     sudo cp -r .vim /root/
 
+    git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
+
     reboot
-    
 
-    
-
+// test git password with gnome keyring
