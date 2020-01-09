@@ -148,8 +148,7 @@
     open vim :PlugInstall
     sudo cp -r .vim /root/
 
-    reboot
-    
+    git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
 
-    
+    reboot
 
