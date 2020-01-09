@@ -152,3 +152,4 @@
 
     reboot
 
+// test git password with gnome keyring
