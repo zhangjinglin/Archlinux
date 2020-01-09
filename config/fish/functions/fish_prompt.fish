@@ -1,0 +1,1 @@
+/home/zhangjinglin/.local/share/omf/themes/agnoster/fish_prompt.fish
