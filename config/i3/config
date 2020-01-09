@@ -21,7 +21,8 @@ font pango:monospace 12
 
 exec --no-startup-id gnome-keyring-daemon --start
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id vmware-user-suid-wrapper
+# Vmware
+# exec --no-startup-id vmware-user-suid-wrapper
 exec --no-startup-id picom
 exec --no-startup-id fcitx
 exec --no-startup-id feh --bg-scale ~/Wallpaper/backgound.jpg 
@@ -31,6 +32,7 @@ exec --no-startup-id amixer sset Master unmute
 # exec --no-startup-id amixer -c 1 sset Master unmute
 # exec --no-startup-id amixer -c 1 sset Speaker unmute
 # exec --no-startup-id setxkbmap -option ctrl:nocaps
+# exec --no-startup-id setxkbmap -option 'ctrl:nocaps'
 
 
 
@@ -71,10 +73,10 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+h move left
-bindsym $mod+j move down
-bindsym $mod+k move up
-bindsym $mod+l move right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
