@@ -36,7 +36,7 @@
     echo ArchLinux > /etc/hostname
     vim /etc/hosts
         127.0.0.1 localhost
-        ::1 	       localhost
+        ::1       localhost
         127.0.1.1 ArchLinux.localdomain ArchLinux
     hwclock --systohc
     visudo (wheel)
@@ -58,7 +58,6 @@
             loader  ...
             initrd  /boot/intel-ucode
             initrd  ...
-            
         }
         using vim :r! blkid read the PARTUUID
     exit
