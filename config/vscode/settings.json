@@ -9,7 +9,7 @@
     "vim.easymotionMarkerWidthPerChar": 12,
     "vim.easymotionMarkerFontSize": "14",
     "vim.easymotionMarkerYOffset": -15,
-    "vim.hlsearch": true,
+    "vim.hlsearch":true,
     "vim.statusBarColorControl": true,
     "vim.statusBarColors.normal": ["#8FBCBB", "#434C5E"],
     "vim.statusBarColors.insert": "#BF616A",
