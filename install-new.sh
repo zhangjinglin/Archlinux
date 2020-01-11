@@ -1,4 +1,4 @@
-cp config/pacman/pacman.conf /etc/pacman.conf
+cp config/etc/pacman/pacman.conf /etc/pacman.conf
 cp config/etc/locale.gen /etc/locale.gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
@@ -31,8 +31,8 @@ cp config/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
 mkdir /home/zhangjinglin/Wallpaper
 cp backgound.jpg /home/zhangjinglin/Wallpaper
 mkdir /home/zhangjinglin/.config/picom
-cp config/i3/config /home/zhangjinglin/.config/i3/
-cp config/picom/picom.conf /home/zhangjinglin/.config/picom/
+# cp -r config/i3/ /home/zhangjinglin/.config/
+cp -r config/picom /home/zhangjinglin/.config/
 cp -r config/polybar/ /home/zhangjinglin/.config/
 cp config/vimrc /home/zhangjinglin/.vimrc
 cp config/vimrc /root/.vimrc
