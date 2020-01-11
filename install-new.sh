@@ -21,19 +21,19 @@ pacman-key --populate archlinux
 pacman -S archlinuxcn-keyring
 pacman -S xorg i3 lightdm lightdm-gtk-greeter xfce4-terminal fcitx-im fcitx-configtool fcitx-rime picom rofi pcmanfm feh fish ttf-cascadia-code yay noto-fonts-cjk polybar alsa-utils lxappearance arc-gtk-theme neofetch gvfs gvfs-smb tumbler gnome-keyring libsecret
 systemctl enable lightdm
-cp config/Xresources ~/.Xresources
-cp -r config/xfce4/ ~/.config/
-cp config/xinitrc ~/.xinitrc
+cp config/Xresources /home/zhangjinglin/.Xresources
+cp -r config/xfce4/ /home/zhangjinglin/.config/
+cp config/xinitrc /home/zhangjinglin/.xinitrc
 groupadd -r autologin
 gpasswd -a zhangjinglin autologin
 cp config/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
-mkdir ~/Wallpaper
-cp backgound.jpg ~/Wallpaper
-mkdir ~/.config/picom
-cp config/i3/config ~/.config/i3/
-cp config/picom/picom.conf ~/.config/picom/
-cp -r config/polybar/ ~/.config/
-cp config/vimrc ~/.vimrc
+mkdir /home/zhangjinglin/Wallpaper
+cp backgound.jpg /home/zhangjinglin/Wallpaper
+mkdir /home/zhangjinglin/.config/picom
+cp config/i3/config /home/zhangjinglin/.config/i3/
+cp config/picom/picom.conf /home/zhangjinglin/.config/picom/
+cp -r config/polybar/ /home/zhangjinglin/.config/
+cp config/vimrc /home/zhangjinglin/.vimrc
 cp config/vimrc /root/.vimrc
 git config --global user.email "zhangjinglin@gmail.com"
 git config --global user.name "zhangjinglin"
