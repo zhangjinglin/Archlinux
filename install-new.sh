@@ -1,8 +1,9 @@
+cp config/pacman/pacman.conf /etc/pacman.conf
 cp config/etc/locale.gen /etc/locale.gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 echo ArchLinux > /etc/hostnam
-cp /config/etc/hosts /etc/hosts
+cp config/etc/hosts /etc/hosts
 hwclock --systohc
 passwd
 useradd -m zhangjinglin
