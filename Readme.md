@@ -5,20 +5,21 @@
     ```
     vga = 792 // 1024x786x24
     ```
-3. Set the time Server
+
+3. use `gdisk /dev/sda` to partition. create a `EFI 500M ef00` part, and rest to `ext4`. use `o` to create a new gpt disk, and `n` to create part, `w` write to the disk.
+> also can use `cgdisk`
+
+> install-base.sh
+4. Set the time Server
     ```bash
     timedatectl set-ntp true
     ```
 
-4. Select mirror list, put the server to top
+5. Select mirror list, put the server to top
     ```
     vim /etc/pacman.d/mirrorlist // 163
     ```
 
-5. use `gdisk /dev/sda` to partition. create a `EFI 500M ef00` part, and rest to `ext4`. use `o` to create a new gpt disk, and `n` to create part, `w` write to the disk.
-> also can use `cgdisk`
-
-> 002-
 6. other command
     ```bash
     mkfs.vfat /dev/sda1
@@ -64,6 +65,10 @@
     umount -R /mnt
     reboot
     ```
+
+> vim the refind.conf, visudo
+
+> install-new.sh
 7. in new system
     ```
     sudo vim /etc/pacman.conf
@@ -150,3 +155,6 @@
     git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
 
     reboot
+
+
+> other chrome, ttf
