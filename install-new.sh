@@ -1,5 +1,6 @@
 cp config/etc/pacman/pacman.conf /etc/pacman.conf
 cp config/etc/locale.gen /etc/locale.gen
+locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 echo ArchLinux > /etc/hostnam
@@ -23,7 +24,7 @@ pacman -S archlinuxcn-keyring
 pacman -S xorg i3 lightdm lightdm-gtk-greeter xfce4-terminal fcitx-im fcitx-configtool fcitx-rime picom rofi pcmanfm feh fish ttf-cascadia-code yay noto-fonts-cjk polybar alsa-utils lxappearance arc-gtk-theme neofetch gvfs gvfs-smb tumbler gnome-keyring libsecret
 systemctl enable lightdm
 cp config/Xresources /home/zhangjinglin/.Xresources
-cp -r config/xfce4/ /home/zhangjinglin/.config/
+cp -r config/xfce4 /home/zhangjinglin/.config/
 cp config/xinitrc /home/zhangjinglin/.xinitrc
 groupadd -r autologin
 gpasswd -a zhangjinglin autologin

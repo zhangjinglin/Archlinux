@@ -23,7 +23,7 @@ exec --no-startup-id gnome-keyring-daemon --start
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Vmware
 # exec --no-startup-id vmware-user-suid-wrapper
-exec --no-startup-id picom
+# exec --no-startup-id picom
 exec --no-startup-id fcitx
 exec --no-startup-id feh --bg-scale ~/Wallpaper/backgound.jpg 
 exec --no-startup-id amixer sset Master unmute
