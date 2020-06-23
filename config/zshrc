@@ -17,8 +17,10 @@ source $ZSH/oh-my-zsh.sh
 eval $(thefuck --alias)
 source $(dirname $(gem which colorls))/tab_complete.sh
 
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 export EDITOR='vim'
-export ARCHFLAGS="-arch x86_64"
 
 
 alias proxy="export https_proxy=http://10.4.34.21:7890 http_proxy=http://10.4.34.21:7890 all_proxy=socks5://10.4.34.21:7891"
