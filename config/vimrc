@@ -43,7 +43,7 @@ nnoremap k gk
 
 let mapleader=";"
 
-inoremap jj <esc>
+inoremap fd <esc>
 nnoremap <leader>h ^
 nnoremap <leader>l $
 nnoremap <leader>s :w<cr>
@@ -53,20 +53,3 @@ nnoremap <leader>qq :q!<cr>
 nnoremap <leader>wh <C-w>h
 nnoremap <leader>wl <C-w>l
 
-call plug#begin('~/.vim/plugged')
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'Yggdroot/indentLine'
-
-call plug#end()
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-let g:airline_powerline_fonts = 1
-let g:airline_symbols.linenr = "\uF85B"
-let g:airline_left_sep = "\uE0B4"
-let g:airline_right_sep = "\uE0B6"
-let g:airline_theme='simple'

@@ -1,0 +1,29 @@
+echo  愛 ❤️  life, 愛 ❤️  linux, 愛 ❤️  coding | lolcat
+export ZSH="/home/zhangjinglin/.oh-my-zsh"
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
+POWERLEVEL9K_MODE="nerdfont-complete"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+ENABLE_CORRECTION="true"
+
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
+autoload -U compinit && compinit
+
+source $ZSH/oh-my-zsh.sh
+
+eval $(thefuck --alias)
+source $(dirname $(gem which colorls))/tab_complete.sh
+
+export EDITOR='vim'
+export ARCHFLAGS="-arch x86_64"
+
+
+alias proxy="export https_proxy=http://10.4.34.21:7890 http_proxy=http://10.4.34.21:7890 all_proxy=socks5://10.4.34.21:7891"
+alias v="vim"
+alias sv="sudoedit"
+alias apt="sudo apt"
+alias ls="colorls"
+alias ll="colorls -l"
