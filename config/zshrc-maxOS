@@ -46,6 +46,9 @@ alias v=vim
 alias sv="sudoedit"
 alias ls="colorls"
 alias ll="colorls -l"
+
+alias code="code-insiders"
+
 alias d=docker
 alias di="docker images"
 alias dps="docker ps -a"
