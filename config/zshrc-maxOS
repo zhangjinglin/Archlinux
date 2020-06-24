@@ -1,0 +1,53 @@
+echo  愛 ❤️  life, 愛 ❤️  linux, 愛 ❤️  coding | lolcat
+export ZSH="/Users/zhangjinglin/.oh-my-zsh"
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
+POWERLEVEL9K_MODE="nerdfont-complete"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+ENABLE_CORRECTION="true"
+
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
+autoload -U compinit && compinit
+
+source $ZSH/oh-my-zsh.sh
+
+eval $(thefuck --alias)
+source $(dirname $(gem which colorls))/tab_complete.sh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export EDITOR='vim'
+
+export PATH="/usr/local/opt/ruby/bin/:$PATH:/Users/zhangjinglin/.dotnet/tools"
+
+alias proxy="export https_proxy=http://10.4.34.21:7890 http_proxy=http://10.4.34.21:7890 all_proxy=socks5://10.4.34.21:7891"
+alias unproxy="unset https_proxy http_proxy all_proxy"
+alias v=vim
+alias sv="sudoedit"
+alias ls="colorls"
+alias ll="colorls -l"
+alias d=docker
+alias di="docker images"
+alias dps="docker ps -a"
+alias drr="docker run --rm"
+alias dri="docker run -it"

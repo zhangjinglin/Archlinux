@@ -24,6 +24,7 @@ export EDITOR='vim'
 
 
 alias proxy="export https_proxy=http://10.4.34.21:7890 http_proxy=http://10.4.34.21:7890 all_proxy=socks5://10.4.34.21:7891"
+alias unproxy="unset https_proxy http_proxy all_proxy"
 alias v="vim"
 alias sv="sudoedit"
 alias apt="sudo apt"
