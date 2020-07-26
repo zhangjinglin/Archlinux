@@ -1,4 +1,7 @@
+export PATH=$PATH:/usr/games
+
 echo  愛 ❤️  life, 愛 ❤️  linux, 愛 ❤️  coding | lolcat
+echo
 export ZSH="/home/zhangjinglin/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -7,14 +10,14 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
 autoload -U compinit && compinit
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#555555,bold,underline"
 
 source $ZSH/oh-my-zsh.sh
 
-eval $(thefuck --alias)
 source $(dirname $(gem which colorls))/tab_complete.sh
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -22,8 +25,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 export EDITOR='vim'
 
-
-alias proxy="export https_proxy=http://10.4.34.21:7890 http_proxy=http://10.4.34.21:7890 all_proxy=socks5://10.4.34.21:7891"
+export https_proxy=http://10.4.34.21:7890 http_proxy=http://10.4.34.21:7890 all_proxy=socks5://10.4.34.21:7891
 alias unproxy="unset https_proxy http_proxy all_proxy"
 alias v="vim"
 alias sv="sudoedit"
